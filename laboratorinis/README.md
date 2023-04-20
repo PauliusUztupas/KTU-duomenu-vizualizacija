@@ -2,14 +2,14 @@
 
 | Variantas | ecoActCode |
 |------------- | ------------- |
-|20   | 11111111111 |
+|16   | 862300 |
 
 
 ### 1. Užduotis
 
 Atsakymas:
 
-![histograma](img/pavyzdys1.png)
+![histograma](img/plot1.png)
 
 Išvados:
 
@@ -17,7 +17,7 @@ Išvados:
 
 Atsakymas:
 
-![atlyginimai](img/pavyzdys2.png)
+![atlyginimai](img/plot2.png)
 
 Išvados:
 
@@ -26,13 +26,16 @@ Išvados:
 
 Atsakymas:
 
-![apdraustieji](img/pavyzdys3.png)
+![apdraustieji](img/plot3.png)
 
-Išvados:
+Išvados: Šioje srityje tikėjaus, kad bus nors viena įmonė kuri turės vieną apdraustąjį su ypač dideliu atlyginimu, ir smarkiai lenks kitų algos vidurkius, bet taip nėra
 
 
 ### 4. Užduotis
 
 Shiny R aplikacijos nuotrauka:
 
-![shiny app](img/shiny_example.png)
+![shiny app](img/Shiny1.png)
+![shiny app](img/Shiny2.png)
+![shiny app](img/Shiny3.png)
+![shiny app](img/Shiny4.png)
