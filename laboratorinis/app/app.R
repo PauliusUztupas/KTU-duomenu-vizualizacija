@@ -58,7 +58,7 @@ server = function(input, output, session) {
       theme_minimal() +
       geom_line(size = 1) +
       labs(x = "Mėnesis", y = "Vidutinė alga") +
-      scale_y_continuous(labels = dollar) +
+      scale_y_continuous() +
       scale_color_discrete(name = "Kompanija")
   )
   
