@@ -2,9 +2,9 @@ library(readr)
 library(tidyverse)
 library(ggplot2)
 
-lab_sodra_data <- read_csv("../data/lab_sodra.csv")
+lab_sodra_data = read_csv("../data/lab_sodra.csv")
 
-filtered_data <- lab_sodra_data %>%
+filtered_data = lab_sodra_data %>%
   filter(ecoActCode == '862300')
 
 # Task 1
@@ -24,7 +24,7 @@ top_5_companies = filtered_data %>%
 top_5_companies_data = filtered_data %>%
   filter(name %in% top_5_companies$name)
 
-p2 <- top_5_companies_data %>%
+p2 = top_5_companies_data %>%
   ggplot(aes(x = month, y = avgWage, color = name)) +
   geom_line(size = 0.75) +
   labs(title = "Average salary of the top five companies")

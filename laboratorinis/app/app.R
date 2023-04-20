@@ -3,7 +3,7 @@ library(shinydashboard)
 library(tidyverse)
 library(scales)
 
-ui <- dashboardPage(
+ui = dashboardPage(
   skin = "green",
   dashboardHeader(
     title = "Odontologinės praktikos veikla - 862300",
@@ -33,17 +33,17 @@ ui <- dashboardPage(
   )
 )
 
-server <- function(input, output, session) {
-  data <- read_csv("https://github.com/PauliusUztupas/KTU-duomenu-vizualizacija/raw/main/laboratorinis/data/lab_sodra.csv")
+server = function(input, output, session) {
+  data = read_csv("https://github.com/PauliusUztupas/KTU-duomenu-vizualizacija/raw/main/laboratorinis/data/lab_sodra.csv")
   
-  sorted_data <- data %>%
+  sorted_data = data %>%
     filter(ecoActCode == 862300)
   
   updateSelectizeInput(session, "imones_pavadinimas",
                        choices = sorted_data$name,
                        server = TRUE)
   
-  output$no_selection_text <- renderText({
+  output$no_selection_text = renderText({
     if (is.null(input$imones_pavadinimas)) {
       "Pasirinkite kompaniją"
     } else {
@@ -51,7 +51,7 @@ server <- function(input, output, session) {
     }
   })
   
-  output$plot <- renderPlot(
+  output$plot = renderPlot(
     sorted_data %>%
       filter(name %in% input$imones_pavadinimas) %>%
       ggplot(aes(x = month, y = avgWage, color = name)) +
@@ -62,8 +62,8 @@ server <- function(input, output, session) {
       scale_color_discrete(name = "Kompanija")
   )
   
-  output$histogram_avgWage <- renderPlot({
-    avgWage_data <- sorted_data %>%
+  output$histogram_avgWage = renderPlot({
+    avgWage_data = sorted_data %>%
       group_by(name) %>%
       summarize(avgWage = mean(avgWage))
     
@@ -74,8 +74,8 @@ server <- function(input, output, session) {
       scale_color_discrete(name = "Kompanija")
   })
   
-  output$histogram_numInsured <- renderPlot({
-    numInsured_data <- sorted_data %>%
+  output$histogram_numInsured = renderPlot({
+    numInsured_data = sorted_data %>%
       group_by(name) %>%
       summarize(numInsured = mean(numInsured))
     
@@ -86,7 +86,7 @@ server <- function(input, output, session) {
       scale_color_discrete(name = "Kompanija")
   })
   
-  output$table <- renderTable({
+  output$table = renderTable({
     sorted_data %>%
       filter(name %in% input$imones_pavadinimas)
   })
